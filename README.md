@@ -1,17 +1,24 @@
 # 📚 Java Student Grade Calculator
 
-A console-based student grade calculator built with Java to demonstrate **Object-Oriented Programming (OOP)** concepts including classes, objects, methods, and arrays.
+A feature-rich student grade calculator built with Java, featuring both **Console (CLI)** and **GUI (Swing)** interfaces to demonstrate Object-Oriented Programming concepts.
 
 ## ✨ Features
 
+### Console Version
 - ✅ Add multiple students
 - ✅ Input multiple subjects per student
-- ✅ Input grades for each subject
 - ✅ Automatic GPA calculation
 - ✅ Pass/Fail determination
-- ✅ Grade classification (Excellent, Good, Fair, Poor)
-- ✅ Display detailed grade reports
-- ✅ Support for multiple grading scales
+- ✅ Detailed grade reports
+
+### GUI Version (NEW!)
+- ✅ **Modern Swing interface**
+- ✅ **Interactive table view** of all students
+- ✅ **Real-time grade reports**
+- ✅ **Add/Delete students** with dialogs
+- ✅ **Color-coded status** (Pass/Fail)
+- ✅ **Split-pane view** for easy navigation
+- ✅ **Beautiful UI** with hover effects
 
 ## 🎯 Grading System
 
@@ -28,156 +35,124 @@ A console-based student grade calculator built with Java to demonstrate **Object
 
 ## 🚀 How to Run
 
-### Using Command Line
+### GUI Version (Recommended)
 
-1. **Compile all Java files:**
 ```bash
+# Compile
 javac src/*.java
+
+# Run
+java -cp src MainGUI
 ```
 
-2. **Run the program:**
+### Console Version
+
 ```bash
+# Compile
+javac src/*.java
+
+# Run
 java -cp src Main
 ```
 
 ### Using VS Code
 
-1. **Install Java Extension Pack** (if not installed)
-2. **Open the project folder**
-3. **Press F5** or click **"Run"** above the `main` method in `Main.java`
+#### GUI Version:
+1. Open `src/MainGUI.java`
+2. Click **"Run"** above the `main` method
 
-### Using Command Prompt (Windows)
-
-```cmd
-cd java-grade-average-calculator
-javac src\*.java
-java -cp src Main
-```
-
-## 📖 Usage Examples
-
-### Example 1: Single Student
-```
-Enter student name: Juan Dela Cruz
-Enter student ID: 2024001
-
-How many subjects? 3
-
-Subject 1 name: Mathematics
-Subject 1 grade: 95
-
-Subject 2 name: Science
-Subject 2 grade: 88
-
-Subject 3 name: English
-Subject 3 grade: 92
-
-===== GRADE REPORT =====
-Student: Juan Dela Cruz (ID: 2024001)
-----------------------------------
-Mathematics    : 95.0 (A)
-Science        : 88.0 (B)
-English        : 92.0 (A)
-----------------------------------
-Average        : 91.67
-Letter Grade   : A
-Status         : PASSED ✓
-Classification : Excellent
-```
-
-### Example 2: Multiple Students
-See `docs/usage-examples.md` for more examples.
-
-## 🎓 Learning Objectives
-
-This project teaches:
-
-### 1. **Classes & Objects (OOP)**
-- `Student` class - represents a student entity
-- `Subject` class - represents a subject entity
-- `GradeCalculator` class - handles calculations
-
-### 2. **Methods**
-- Constructor methods
-- Getter/Setter methods
-- Calculation methods
-- Display methods
-
-### 3. **Arrays**
-- Array of objects (`Subject[]`)
-- Array iteration
-- Dynamic array sizing
-
-### 4. **Java Concepts**
-- Scanner for input
-- String formatting
-- Conditionals (if-else)
-- Loops (for, while)
-- Exception handling
+#### Console Version:
+1. Open `src/Main.java`
+2. Click **"Run"** above the `main` method
 
 ## 📂 Project Structure
 
 ```
 src/
-├── Main.java              # Entry point, user interface
-├── Student.java           # Student entity class
-├── Subject.java           # Subject entity class
-└── GradeCalculator.java   # Calculator logic class
+├── Main.java                # Console entry point
+├── MainGUI.java            # GUI entry point (NEW)
+├── MainWindow.java         # Main GUI window (NEW)
+├── AddStudentDialog.java   # Add student dialog (NEW)
+├── Student.java            # Student entity class
+├── Subject.java            # Subject entity class
+└── GradeCalculator.java    # Calculator logic class
 ```
 
-## 🔧 Class Descriptions
+## 🎓 Learning Objectives
 
-### **Student.java**
-Represents a student with:
-- Name, ID, subjects array
-- Methods: calculate average, get grade, pass/fail status
+### Classes & Objects (OOP)
+- `Student` class - represents a student entity
+- `Subject` class - represents a subject entity
+- `GradeCalculator` class - handles calculations
+- `MainWindow` class - GUI main window
+- `AddStudentDialog` class - dialog for adding students
 
-### **Subject.java**
-Represents a subject with:
-- Subject name and grade
-- Methods: get letter grade, validation
+### Methods
+- Constructor methods
+- Getter/Setter methods
+- Static methods
+- Event handler methods (GUI)
 
-### **GradeCalculator.java**
-Handles:
-- Grade calculations
-- Letter grade conversion
-- Classification determination
+### Arrays
+- `Subject[]` - array of objects
+- Array iteration and manipulation
 
-### **Main.java**
-- User interface
-- Input handling
-- Menu system
+### GUI Programming (NEW)
+- **Swing components**: JFrame, JPanel, JTable, JDialog
+- **Layout managers**: BorderLayout, GridLayout, BoxLayout
+- **Event handling**: ActionListeners, MouseListeners
+- **Custom UI**: Styled buttons, colors, fonts
 
-## 🎨 Features Breakdown
+### Java Concepts
+- Encapsulation
+- Scanner for input (Console)
+- ArrayList for dynamic lists
+- String formatting
+- Exception handling
 
-| Feature | Description |
-|---------|-------------|
-| **Multiple Students** | Add and track multiple students |
-| **Multiple Subjects** | Each student can have any number of subjects |
-| **Auto Calculate** | Automatically calculates average GPA |
-| **Letter Grades** | Converts numeric grades to letter grades |
-| **Pass/Fail** | Determines if student passed or failed |
-| **Grade Report** | Beautiful formatted output |
-| **Input Validation** | Validates grade ranges (0-100) |
+## 🎨 GUI Features
+
+| Component | Description |
+|-----------|-------------|
+| **Header** | Branded title with gradient background |
+| **Students Table** | View all students at a glance |
+| **Report Panel** | Detailed grade report for selected student |
+| **Add Button** | Opens dialog to add new student |
+| **Delete Button** | Remove selected student |
+| **Refresh Button** | Refresh the table view |
+| **About Button** | Show app information |
+
+## 🔧 Requirements
+
+- **Java 8 or higher**
+- **No external dependencies** (uses built-in Swing)
+
+## 📖 Usage Examples
+
+### GUI Version
+
+1. **Launch the application**: Run `MainGUI.java`
+2. **Add a student**: Click "➕ Add Student"
+3. **Fill in details**: Name, ID, and subjects with grades
+4. **View report**: Click on any student in the table
+5. **Delete student**: Select and click "🗑️ Delete Student"
+
+### Console Version
+
+1. **Launch**: Run `Main.java`
+2. **Follow menu**: Select options 1-5
+3. **Add students**: Enter details when prompted
+4. **View reports**: Choose from menu options
 
 ## 🚀 Future Enhancements
 
-- [ ] Save/Load data from files
+- [ ] Save/Load data to files
 - [ ] Edit student information
-- [ ] Delete students
-- [ ] Search functionality
-- [ ] Export to CSV
-- [ ] GUI version with JavaFX
-- [ ] Weighted grades
-- [ ] Semester-based tracking
-
-## 🐛 Error Handling
-
-The program handles:
-- Invalid numeric input
-- Out-of-range grades (< 0 or > 100)
-- Empty student names
-- Invalid menu choices
+- [ ] Search/Filter students
+- [ ] Export reports to PDF
+- [ ] Charts and graphs
+- [ ] Dark mode toggle
+- [ ] Database integration
 
 ## 📝 License
 
@@ -189,5 +164,5 @@ MIT License - Feel free to use for learning!
 
 ---
 
-**Happy Coding! 📚✨**
+**Version 2.0** - Now with GUI! 🎨✨
 ```
